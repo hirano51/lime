@@ -1,0 +1,62 @@
+@charset"utf-8";
+
+/*全体編集*/
+body{
+    margin:0;
+    padding:0;
+    background:rgba(200,255,200,0.5);
+}
+
+
+
+
+/*ヘッダー編集*/
+#header{
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    display: flex;
+}
+
+#header li{
+    
+    border-left:solid 1px #C36;
+}
+
+/*タイトル編集*/
+.icon{
+    width:180px ;
+}
+
+/*サンプル画像編集*/
+.sample1 img{
+width: 100%;
+
+}
+
+/*ボックスの編集*/
+#box{
+    text-align: center; 
+}
+
+#box1{
+    display: block;
+    width: 100%
+}
+
+/*機能画像編集*/
+#function img{
+    width: 40%;
+}
+
+/*フッダー編集*/
+#footer {
+	width: 100%;
+	padding: 3px 0 3px 0;
+	background: #1FF;
+	font-weight: bold;
+	text-align: left;
+}
+
