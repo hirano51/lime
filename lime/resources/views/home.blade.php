@@ -8,7 +8,8 @@
     
     <body>
       
-     <form action="home.php" method="post">
+     <form action="./new" method="post">
+     @csrf
       <div id="header">
        <a href="home.php"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
 
@@ -26,9 +27,9 @@
      <div id="box">
       <div id="box1">
         <li><input type="text" placeholder="メールアドレス info@example.jp" name="mail"/></li>
-       <p id="matext" style="color:#c90505;"></p> 
+       <p id="matext" style="color:#c90505;">{{$emailerr}}</p> 
         <li><input type="text" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
-       <p id="pwtext" style="color:#c90505;"></p> 
+       <p id="pwtext" style="color:#c90505;">{{$pwerr}}</p> 
         <li><input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect">
@@ -39,7 +40,7 @@
                 <option>tes4</option>
          </select>
          </li>
-         <p id="urltext" style="color:#c90505;"></p>  
+         <p id="urltext" style="color:#c90505;">{{$urlerr}}</p>  
       </div>
       <div id="box2">
         <p><a href="#">利用規約</a>・<a href="#">プライバシーポリシー</a>に同意の上ご利用ください</p>
@@ -104,8 +105,8 @@
      <div id="box">
       <h2>今すぐサイトを作ろう</h2>
     
-     <form action="home.php" method="post">
-      
+     <form action="./new" method="post">
+      @csrf
      <div id="box">
       <div id="box1">
         <li><input type="text" placeholder="メールアドレス info@example.jp" name="mail"/></li>

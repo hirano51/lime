@@ -18,3 +18,4 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 Route::get("/home", [HomeController::class, "index"])->name("home.index");
+Route::post("/new", [HomeController::class, "new"])->name("home.new");
