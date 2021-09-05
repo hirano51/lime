@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>サイトホーム</title>
         <link rel="stylesheet" href="css/home.css">
+        <script src="js/app.js"></script>
+        <script src="js/home.js"></script>
     </head>
     
     <body>
@@ -26,11 +28,11 @@
       
      <div id="box">
       <div id="box1">
-        <li><input type="text" placeholder="メールアドレス info@example.jp" name="mail"/></li>
+        <li><input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/></li>
        <p id="matext" style="color:#c90505;">{{$emailerr}}</p> 
-        <li><input type="text" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
+        <li><input type="text" id="pw1" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
        <p id="pwtext" style="color:#c90505;">{{$pwerr}}</p> 
-        <li><input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
+        <li><input type="text" id="url1" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect">
                 <option>tes0</option>
@@ -46,7 +48,7 @@
         <p><a href="#">利用規約</a>・<a href="#">プライバシーポリシー</a>に同意の上ご利用ください</p>
       </div>
       <div id="box3">
-      <input type="submit" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
+      <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       <p id="msgtext" style="color:#c90505;"></p>  
       </div>
       </form>

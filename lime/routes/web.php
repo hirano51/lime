@@ -19,3 +19,8 @@ use App\Http\Controllers\HomeController;
 // });
 Route::get("/home", [HomeController::class, "index"])->name("home.index");
 Route::post("/new", [HomeController::class, "new"])->name("home.new");
+Route::post("/home/check", [HomeController::class, "check"]);
+
+Route::get("/tes", [HomeController::class, "index"])->name("tes.index");
+Route::post("/tes2", [HomeController::class, "tes2"])->name("tes.tes2");
+Route::post("/tes/check", [HomeController::class, "check"]);

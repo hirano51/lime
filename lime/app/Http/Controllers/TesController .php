@@ -4,28 +4,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class HomeController extends Controller
+class TesController extends Controller
 {
     public function index()
     {
-           $emailerr="";
+           $usererr="";
            $pwerr="";
-           $urlerr="";
-           $err="";
-        return view("home",compact("emailerr","pwerr","urlerr"));
+           $shopcodeerr="";
+        return view("tes",compact("usererr","pwerr","shopcodeerr"));
     }
 
     public function check(Request $r)
     {
         $res["success"]=true;
         $validator=Validator::make($r->all(),[
-            "mail" => "required",
+            "user" => "required",
             "pw" => "required",
-            "url" => "required",
+            "shopcode" => "required",
         ],[
-            "mail.required" => "メールアドレスが入力されていません",
+            "user.required" => "ユーザーIDが入力されていません",
             "pw.required" => "パスワードが入力されていません",
-            "url.required" => "urlが入力されていません",
+            "shopcode.required" => "店舗コード入力されていません",
         ]);
         if($validator->fails()){
             $res["success"]=false;
@@ -34,24 +33,24 @@ class HomeController extends Controller
         }
         return response()->json($res);
     }
-    public function new(Request $r)
+    public function tes2(Request $r)
     {
 
-        if ($_POST["btn1"]!=""||$_POST["btn2"]!=""){
+        if ($_POST["btn"]!=""){
            
 
-            if($_POST["mail"]==""){
-                $emailerr="メールが入力されていません";
+            if($_POST["user"]==""){
+                $usererr="メールが入力されていません";
             }
 
             if($_POST["pw"]==""){
                 $pwerr="パスワードが入力されていません";
             }
 
-            if($_POST["url"]==""){
-                $urlerr="urlが入力されていません";
+            if($_POST["shopcode"]==""){
+                $shopcodeerr="店舗コードが入力されていません";
             }
-            return view("home",compact("emailerr","pwerr","urlerr"));
+            return view("tes",compact("usererr","pwerr","shopcodeerr"));
 
             }
         }

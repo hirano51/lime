@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const glob=require('glob');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -10,8 +10,20 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+ glob.sync('resources/css/*.css').map(function(file) {
+    mix.css(file, 'public/css').options({
+        processCssUrls: false
+    });
+});
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+glob.sync('resources/js/*.js').map(function(file) {
+    mix.js(file, 'public/js')
+    .sourceMaps()
+    .autoload({
+        "jquery":['$','window.jQuery'],
+    });
+});
+// mix.js('resources/js/app.js', 'public/js')
+//     .postCss('resources/css/app.css', 'public/css', [
+//         //
+//     ]);
