@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\TesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,6 @@ Route::get("/home", [HomeController::class, "index"])->name("home.index");
 Route::post("/new", [HomeController::class, "new"])->name("home.new");
 Route::post("/home/check", [HomeController::class, "check"]);
 
-Route::get("/tes", [HomeController::class, "index"])->name("tes.index");
-Route::post("/tes2", [HomeController::class, "tes2"])->name("tes.tes2");
-Route::post("/tes/check", [HomeController::class, "check"]);
+Route::get("/tes", [TesController::class, "index"])->name("tes.index");
+Route::post("/tes2", [TesController::class, "tes2"])->name("tes.tes2");
+Route::post("/tes/check", [TesController::class, "check"]);
