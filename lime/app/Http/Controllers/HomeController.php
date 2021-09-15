@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\MUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -32,6 +34,17 @@ class HomeController extends Controller
             $res["error"]=$validator->getMessageBag()->toArray();
             return response()->json($res,400);
         }
+
+        $data = MUser::where("mail", $r->input("mail")) ->get();
+        if($data != null && count($data) > 0){
+            $res["success"]=false;
+            $res["error"]["mail"]="すでに登録されているメールアドレスです";
+            return response()->json($res,400);
+        }
+        
+        MUser::create(["mail"=>$r->input("mail"),
+                       "pw"=>$r->input("pw"),
+                       "url"=>$r->input("url")]);
         return response()->json($res);
     }
     public function new(Request $r)
