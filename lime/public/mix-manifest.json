@@ -1,8 +1,15 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/edit.js": "/js/edit.js",
     "/js/home.js": "/js/home.js",
-    "/js/tes.js": "/js/tes.js",
+    "/js/login.js": "/js/login.js",
+    "/js/menu.js": "/js/menu.js",
+    "/js/notice.js": "/js/notice.js",
+    "/css/menu.css": "/css/menu.css",
+    "/css/login.css": "/css/login.css",
     "/css/home.css": "/css/home.css",
-    "/css/app.css": "/css/app.css"
+    "/css/edit.css": "/css/edit.css",
+    "/css/app.css": "/css/app.css",
+    "/css/notice.css": "/css/notice.css"
 }

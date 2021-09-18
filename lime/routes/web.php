@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TesController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\EditController;
+use App\Http\Controllers\NoticeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +24,10 @@ use App\Http\Controllers\TesController;
 Route::get("/home", [HomeController::class, "index"])->name("home.index");
 Route::post("/new", [HomeController::class, "new"])->name("home.new");
 Route::post("/home/check", [HomeController::class, "check"]);
+Route::get("/login", [LoginController::class, "index"])->name("login.index");
+Route::post("/login/check", [LoginController::class, "check"]);
+Route::post("/login/entrycheck", [LoginController::class, "entrycheck"]);
+Route::get("/menu", [MenuController::class, "index"])->name("menu.index");
+Route::get("/edit", [EditController::class, "index"])->name("edit.index");
+Route::get("/notice", [NoticeController::class, "index"])->name("notice.index");
 
-Route::get("/tes", [TesController::class, "index"])->name("tes.index");
-Route::post("/tes2", [TesController::class, "tes2"])->name("tes.tes2");
-Route::post("/tes/check", [TesController::class, "check"]);

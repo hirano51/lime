@@ -10,11 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-           $emailerr="";
-           $pwerr="";
-           $urlerr="";
-           $err="";
-        return view("home",compact("emailerr","pwerr","urlerr"));
+          
+        return view("home");
     }
 
     public function check(Request $r)

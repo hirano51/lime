@@ -2,7 +2,8 @@
 <html lang="jp">
     <head>
         <meta charset="UTF-8">
-        <title>サイトホーム</title>
+        <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
+        <link rel="title icon" href="images/favicon.ico">
         <link rel="stylesheet" href="css/home.css">
         <script src="js/app.js"></script>
         <script src="js/home.js"></script>
@@ -13,11 +14,12 @@
      <form action="./new" method="post">
      @csrf
       <div id="header">
-       <a href="home.php"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
+       <a href="#"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
+       
 
        <ul class="ham">
-        <id class="ham_line ham_line1"><a href="#">新規登録</a>
-        <id class="ham_line ham_line2"><a href="#">ログイン</a>
+        <id class="ham_line ham_line1"><a href="./login">新規登録</a>
+        <id class="ham_line ham_line2"><a href="./login">ログイン</a>
         <id class="ham_line ham_line3"><a href="#">機能紹介</a>
         </ul>
       </div>
@@ -29,9 +31,9 @@
      <div id="box">
       <div id="box1">
         <li><input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/></li>
-       <p id="matext" style="color:#c90505;">{{$emailerr}}</p> 
+       <p id="matext" style="color:#c90505;"></p> 
         <li><input type="text" id="pw1" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
-       <p id="pwtext" style="color:#c90505;">{{$pwerr}}</p> 
+       <p id="pwtext" style="color:#c90505;"></p> 
         <li><input type="text" id="url1" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect">
@@ -42,7 +44,7 @@
                 <option>tes4</option>
          </select>
          </li>
-         <p id="urltext" style="color:#c90505;">{{$urlerr}}</p>  
+         <p id="urltext" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
         <p><a href="#">利用規約</a>・<a href="#">プライバシーポリシー</a>に同意の上ご利用ください</p>
@@ -131,15 +133,15 @@
         <p><a href="#">利用規約</a>・<a href="#">プライバシーポリシー</a>に同意の上ご利用ください</p>
       </div>
       <div id="box3">
-      <input type="submit" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
+      <input type="button" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
       <p id="msgtext" style="color:#c90505;"></p>  
       </div>
       </form>
 
       <div id="footer">
           <h3>サービス紹介</h3>
-              <li><a href="login.php">新規登録</a></li>
-              <li><a href="#">ログイン</a></li>
+              <li><a href="./login">新規登録</a></li>
+              <li><a href="./login">ログイン</a></li>
               <li><a href="#">利用規約</a></li>
               <li><a href="#">プライバシーポリシー</a></li>
               <li><a href="#">機能紹介</a></li>
