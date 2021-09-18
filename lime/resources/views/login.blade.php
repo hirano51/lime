@@ -13,9 +13,13 @@
     <body>
 
      <form action="login.php" method="post">
-     <a href="./home"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
+     <div id="backhome">
+     <a href="./home"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>   
+     </div>
+     
+     
+     <div id="box">
         <h1>ログイン</h1>
-        <div id="box">
             <div id="box1">
               <input type="text" placeholder="メールアドレス" id="loginmail" name="loginmail"/>
              <p id="loginmailtext" style="color:#c90505;"></p> 
@@ -33,8 +37,9 @@
 
         
 
-        <h1>新規登録</h1>
+        
         <div id="box">
+        <h1>新規登録</h1>
             <div id="box1">
               <input type="text" placeholder="メールアドレス info@example.jp" id="mail" name="mail"/>
              <p id="matext" style="color:#c90505;"></p> 
@@ -43,11 +48,10 @@
               <input type="text" placeholder="サイトURL（３文字以上）" id="url" name="url"/>
              <p id="urltext" style="color:#c90505;"></p>  
              <select id="urlselect">
-                      <option>tes0</option>
+                      <option>lime</option>
                       <option>tes1</option>
                       <option>tes2</option>
                       <option>tes3</option>
-                      <option>tes4</option>
                </select>
                </li>
                <p id="urltext" style="color:#c90505;"></p>  
