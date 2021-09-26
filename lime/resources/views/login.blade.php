@@ -17,9 +17,10 @@
      <a href="./home"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>   
      </div>
      
-     
-     <div id="box">
-        <h1>ログイン</h1>
+     <input type="button" id="loginbtn" value="ログイン">
+     <input type="button" id="newbtn" value="新規登録">
+     <!-- ログイン -->
+     <div id="loginbox">
             <div id="box1">
               <input type="text" placeholder="メールアドレス" id="loginmail" name="loginmail"/>
              <p id="loginmailtext" style="color:#c90505;"></p> 
@@ -37,9 +38,8 @@
 
         
 
-        
-        <div id="box">
-        <h1>新規登録</h1>
+        <!-- 新規登録 -->
+        <div id="newbox" style="display:none;">
             <div id="box1">
               <input type="text" placeholder="メールアドレス info@example.jp" id="mail" name="mail"/>
              <p id="matext" style="color:#c90505;"></p> 
@@ -48,10 +48,10 @@
               <input type="text" placeholder="サイトURL（３文字以上）" id="url" name="url"/>
              <p id="urltext" style="color:#c90505;"></p>  
              <select id="urlselect">
-                      <option>lime</option>
-                      <option>tes1</option>
-                      <option>tes2</option>
-                      <option>tes3</option>
+                      <option>lime.shop</option>
+                      <option>shopselect.net</option>
+                      <option>lime.ec</option>
+                      <option>theshop.jp</option>
                </select>
                </li>
                <p id="urltext" style="color:#c90505;"></p>  

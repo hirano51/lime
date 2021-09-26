@@ -41,7 +41,7 @@ class HomeController extends Controller
         
         MUser::create(["mail"=>$r->input("mail"),
                        "pw"=>$r->input("pw"),
-                       "url"=>$r->input("url")]);
+                       "url"=>$r->input("url") . "." . $r->input("domain")]);
         return response()->json($res);
     }
     public function new(Request $r)

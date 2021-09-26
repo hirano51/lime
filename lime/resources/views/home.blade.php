@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
         <link rel="title icon" href="images/favicon.ico">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
         <link rel="stylesheet" href="css/home.css">
         <script src="js/app.js"></script>
         <script src="js/home.js"></script>
@@ -17,12 +20,21 @@
        <a href="#"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
        
 
-       <ul class="ham">
-        <id class="ham_line ham_line1"><a href="./login">新規登録</a>
-        <id class="ham_line ham_line2"><a href="./login">ログイン</a>
-        <id class="ham_line ham_line3"><a href="#">機能紹介</a>
-        </ul>
-      </div>
+       <div class="menu-trigger" href="">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="./login">新規登録</a></li>
+      <li><a href="./login">ログイン</a></li>
+      <li><a href="#">機能紹介</a></li>
+    </ul>
+  </nav>
+  <div class="overlay"></div>
+</div>
+       
       
       <div id="sample1">
        <img src="images/sample.jpg" alt="タイトル"/>
@@ -30,20 +42,22 @@
       
      <div id="box">
       <div id="box1">
-        <li><input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/></li>
+        <input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
-        <li><input type="text" id="pw1" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
+       <span class="input-wrap">
+          <input type="password" id="pw1" placeholder="パスワード 英数字６文字以上" name="pw"/>
+          <i class="toggle-pass fa fa-eye-slash"></i>
+        </span>
        <p id="pwtext" style="color:#c90505;"></p> 
-        <li><input type="text" id="url1" placeholder="サイトURL（３文字以上）"name="url"/>
+        <input type="text" id="url1" placeholder="サイトURL（３文字以上）"name="url"/>
        
-       <select id="urlselect">
-                <option>tes0</option>
-                <option>tes1</option>
-                <option>tes2</option>
-                <option>tes3</option>
-                <option>tes4</option>
+       <select id="urlselect" name="domain">
+       <option value="lime.shop" selected>lime.shop</option>
+       <option value="shopselect.net">shopselect.net</option>
+       <option value="lime.ec" >lime.ec</option>
+       <option value="theshop.jp">theshop.jp</option>
          </select>
-         </li>
+         
          <p id="urltext" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
@@ -115,18 +129,17 @@
       <div id="box1">
         <li><input type="text" placeholder="メールアドレス info@example.jp" name="mail"/></li>
        <p id="matext" style="color:#c90505;"></p> 
-        <li><input type="text" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
+        <li><input type="password" id="pw2" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
        <p id="pwtext" style="color:#c90505;"></p> 
         <li><input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect">
-                <option>tes0</option>
-                <option>tes1</option>
-                <option>tes2</option>
-                <option>tes3</option>
-                <option>tes4</option>
+       <option>lime.shop</option>
+       <option>shopselect.net</option>
+       <option>lime.ec</option>
+       <option>theshop.jp</option>
          </select>
-         </li>
+         
          <p id="urltext" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
@@ -136,6 +149,9 @@
       <input type="button" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
       <p id="msgtext" style="color:#c90505;"></p>  
       </div>
+      
+      <div id="page_top"><a href="#">TOP</a></div>
+
       </form>
 
       <div id="footer">
