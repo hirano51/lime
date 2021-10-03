@@ -4,7 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <title>編集お知らせ</title>
-        <link rel="tylesheet" href="">
+        <link rel="stylesheet" href="css/notice.css">
+        <script src="js/app.js"></script>
+        <script src="js/notice.js"></script>
     </head>
 
     <body>
@@ -15,4 +17,5 @@
         <h3> <p id="text" style="color:#c90505;"></p></h3>
 
         <img src="images/notice.jpg" alt="工事画面"/>
+      
     </body>

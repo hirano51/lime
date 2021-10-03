@@ -70,7 +70,7 @@
       </form>
      
       <div id="descriptio1">
-          <h2>●●は<br>提供している食品の詳細を<br>簡単に作成できます</h2>
+          <h2>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</h2>
           <h3>こんな時はありませんか？</h3>
           <p>
               メニュー表にアレルギー表示をしたら見づらくなってしまった
@@ -139,7 +139,7 @@
        <option>lime.ec</option>
        <option>theshop.jp</option>
          </select>
-         
+
          <p id="urltext" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
