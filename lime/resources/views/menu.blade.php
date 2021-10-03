@@ -9,7 +9,7 @@
     </head>
     <body>
     <div id="header">
-    <ul>
+
     <a href="#">確定</a>
     <a href="./edit">編集</a>
     <a href="#">閉鎖</a>
@@ -223,6 +223,7 @@
 　　<div id="kcal">
 　　  <p><input type="text" placeholder="カロリー"/>Kcal</p>  
 　　</div>
+</div>
 　　
 　　 <div id="footer">
           <h3>添付URL</h3>

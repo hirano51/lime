@@ -22,6 +22,7 @@ text-align: right;
 
 #attachment{
     display: inline-block;
+    width:350px;
     text-align: center;
     background-color:rgba(238, 245, 245,0.5);
     padding: 10px;
@@ -29,12 +30,14 @@ text-align: right;
 
 #allergies{
     display:flex; 
+    flex-wrap:wrap;
 }
 
  /* アイコンの大きさ */
  #ico{
     width: 50px;
 }
+
 /* アイコンのカーソルを合わせると名前が出る */
 .egg {
 	width:			25px;
