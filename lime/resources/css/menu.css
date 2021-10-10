@@ -148,7 +148,7 @@ body{
 #allergies > div {
 	position: relative;
 }
-
+/* アイコン画像の設定 */
 #allergies > div > input[type="checkbox"] {
     cursor: pointer;
     -webkit-appearance: none;
@@ -160,7 +160,7 @@ body{
     margin:0px;
     background-size: contain;
 }
-
+/* カーソルを合わせたら素材名を出す */
 #allergies > div > .caption {
 	font-size: 130%;
 	text-align: center;
@@ -181,7 +181,7 @@ body{
 #allergies > div:hover .mask {
 	opacity: 1;
 }
-
+/* アイコンをクリックしたらチェックマークを出す */
 #allergies > div > input[type="checkbox"]:checked:before {
     content: "";
     position: absolute;
@@ -195,7 +195,7 @@ body{
 	background-size:contain; 
 }
 
-
+/* アイコンの画像 */
 .egg{
     background: url(../images/egg.gif);
     border-radius: 8px;
