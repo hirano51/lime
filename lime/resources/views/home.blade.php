@@ -136,7 +136,7 @@
        <p id="pwtext" style="color:#c90505;"></p> 
         <input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
        
-       <select id="urlselect">
+       <select id="urlselect" name="domain">
        <option>lime.shop</option>
        <option>shopselect.net</option>
        <option>lime.ec</option>

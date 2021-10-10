@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MUser;
+use App\Models\TBase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,7 +10,8 @@ class MenuController extends Controller
 {
     public function index()
     {
-        return view("menu");
+        $base=TBase::where("user_id",session()->get("userid"))->first();
+        return view("menu",compact("base"));
     } 
 
 }

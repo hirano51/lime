@@ -7,7 +7,12 @@
         <script src="js/app.js"></script>
         <script src="js/menu.js"></script>
     </head>
-    <body>
+
+    @if(!is_null($base) && !empty($base->bg_img))
+<body style="background-image: url('uploads/{{$base->bg_img}}')"/>   <!--背面画像の切替-->
+@else
+<body> 
+@endif
 
     <div class="menu-trigger" href="">
     <span></span>
@@ -23,7 +28,12 @@
    
 　　
 　　<div id="userimage">
-　　<img src="images/coffee.jpg"/>    
+    <!-- データがありかつ画像が登録されている場合 -->
+@if(!is_null($base) && !empty($base->top_img))
+<img src="uploads/{{$base->top_img}}"/>   <!--トップ画像の切替-->
+@else
+<p>画像が設定されていません</p> 
+@endif
 　　</div>
 　　
 　　<div id="menu">

@@ -40,7 +40,7 @@ class LoginController extends Controller
             $res["error"]["mail"]="メールアドレスまたはパスワードが不正です";
             return response()->json($res,400);
         }
-        
+        session()->put("userid",$data[0]->id);
         
         return response()->json($res);
     }
@@ -69,9 +69,10 @@ class LoginController extends Controller
             return response()->json($res,400);
         }
         
-        MUser::create(["mail"=>$r->input("mail"),
+        $user=MUser::create(["mail"=>$r->input("mail"),
                        "pw"=>$r->input("pw"),
                        "url"=>$r->input("url")]);
+                       session()->put("userid",$user->id);
         return response()->json($res);
     }
 }

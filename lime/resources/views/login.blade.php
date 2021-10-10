@@ -25,7 +25,11 @@
             <div id="box1">
               <input type="text" placeholder="メールアドレス" id="loginmail" name="loginmail"/>
              <p id="loginmailtext" style="color:#c90505;"></p> 
-              <input type="text" placeholder="パスワード" id="loginpw" name="loginpw"/>
+             <span class="input-wrap">
+          <input type="password" id="pw" placeholder="パスワード" id="loginpw" name="loginpw"/>
+          <i class="toggle-pass fa fa-eye-slash"></i>
+        </span>
+              
              <p id="loginpwtext" style="color:#c90505;"></p> 
              
             </div>

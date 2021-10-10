@@ -1,7 +1,6 @@
 @charset"utf-8";
 /* 全体背景 */
 body{
-   background-image: url("../images/sample3.jpg"); /* 画像 */
    background-size: cover;               /* 全画面 */
    background-attachment: fixed;         /* 固定 */
    background-position: center center;   /* 縦横中央 */
