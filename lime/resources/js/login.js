@@ -68,4 +68,13 @@ $(function(){
         }
        }); 
 });
+$(".toggle-pass").on("click", (e) => {
+    $(e.target).toggleClass('fa-eye fa-eye-slash');
+    var input = $(e.target).prev('input');
+    if (input.attr('type') == 'text') {
+      input.attr('type','password');
+    } else {
+      input.attr('type','text');
+    }
+});
 });

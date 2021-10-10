@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
         <link rel="title icon" href="images/favicon.ico">
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><!-- pwの表示非表示切替 -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
         <link rel="stylesheet" href="css/home.css">
@@ -117,7 +117,7 @@
           <h3>●●する！</h3>
           <img src="images/x.jpg"/>
           <p>備考欄</p>
-          <li><a href="#">他にも詳しい機能についてはこちらから</a></li>
+          <a href="#">他にも詳しい機能についてはこちらから</a>
       </div>
           
      <div id="box">
@@ -127,11 +127,14 @@
       @csrf
      <div id="box">
       <div id="box1">
-        <li><input type="text" placeholder="メールアドレス info@example.jp" name="mail"/></li>
+        <input type="text" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
-        <li><input type="password" id="pw2" placeholder="パスワード 英数字６文字以上" name="pw"/></li>
+       <span class="input-wrap">
+          <input type="password" id="pw2" placeholder="パスワード 英数字６文字以上" name="pw"/>
+          <i class="toggle-pass fa fa-eye-slash"></i>
+        </span>
        <p id="pwtext" style="color:#c90505;"></p> 
-        <li><input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
+        <input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect">
        <option>lime.shop</option>

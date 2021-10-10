@@ -6,6 +6,7 @@
         <title>ログイン | LIME</title>
         <link rel="title icon" href="images/favicon.ico">
         <link rel="stylesheet" href="css/login.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><!-- pwの表示非表示切替 -->
         <script src="js/app.js"></script>
         <script src="js/login.js"></script>
     </head>
@@ -43,7 +44,10 @@
             <div id="box1">
               <input type="text" placeholder="メールアドレス info@example.jp" id="mail" name="mail"/>
              <p id="matext" style="color:#c90505;"></p> 
-              <input type="text" placeholder="パスワード 英数字６文字以上" id="pw" name="pw"/>
+             <span class="input-wrap">
+          <input type="password" id="pw" placeholder="パスワード 英数字６文字以上" name="pw"/>
+          <i class="toggle-pass fa fa-eye-slash"></i>
+        </span>
              <p id="pwtext" style="color:#c90505;"></p> 
               <input type="text" placeholder="サイトURL（３文字以上）" id="url" name="url"/>
              <p id="urltext" style="color:#c90505;"></p>  

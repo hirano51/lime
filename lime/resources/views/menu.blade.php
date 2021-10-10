@@ -8,12 +8,19 @@
         <script src="js/menu.js"></script>
     </head>
     <body>
-    <div id="header">
 
-    <a href="#">確定</a>
-    <a href="./edit">編集</a>
-    <a href="#">閉鎖</a>
-　　</div>
+    <div class="menu-trigger" href="">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="./edit">編集開始</a></li>
+    </ul>
+  </nav>
+  <div class="overlay"></div>
+   
 　　
 　　<div id="userimage">
 　　<img src="images/coffee.jpg"/>    
@@ -248,6 +255,7 @@
 　　<div id="kcal">
 　　  <p><input type="text" placeholder="カロリー"/>Kcal</p>  
 　　</div>
+</div>
 </div>
 　　
 　　 <div id="footer">
