@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMUserTable extends Migration
+class CreateTCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateMUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_user', function (Blueprint $table) {
+        Schema::create('t_category', function (Blueprint $table) {
             $table->increments("id");
-            $table->string("mail");
-            $table->string("pw");
-            $table->string("url");
+            $table->integer("base_id");
+            $table->string("name");
         });
     }
 
@@ -28,6 +27,6 @@ class CreateMUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("m_user");
+        Schema::dropIfExists("t_category");
     }
 }
