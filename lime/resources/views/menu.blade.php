@@ -52,15 +52,18 @@
 　　</div>
 
 　　<!-- 画像からカロリーまでのブロック -->
-　　<div id="attachment">
+<div id="attachment">
 
     <!-- メニュー画像　　※利用者画像挿入 -->
     <img src="images/x.jpg"/>
 
     <!-- メニュー値段　　※利用者入力項目 -->
-　<div id="name">
-　<p><input type="text" placeholder="品名・値段"/></p> 
-　</div>
+　 <div id="name">
+　  <p><input type="text" placeholder="品名"/></p> 
+　 </div>
+   <div id="price">
+　    <p>￥<input type="text" placeholder="値段"/></p> 
+　 </div>
 
 <!-- アレルギーアイコン -->
 　<div id="allergies">
@@ -261,10 +264,10 @@
 	    </div>
     </div>
     
-<!-- カロリー記載　※利用者記載　 -->
-　　<div id="kcal">
-　　  <p><input type="text" placeholder="カロリー"/>Kcal</p>  
-　　</div>
+            <!-- カロリー記載　※利用者記載　 -->
+　　         <div id="kcal">
+　　        <p><input type="text" placeholder="カロリー"/>cal</p>  
+　　         </div>
 </div>
 </div>
 　　

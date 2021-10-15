@@ -67,8 +67,9 @@
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       <p id="msgtext" style="color:#c90505;"></p>  
       </div>
+     </div>
       </form>
-     
+     <div class="explanation">
       <div id="descriptio1">
           <h2>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</h2>
           <h3>こんな時はありませんか？</h3>
@@ -119,30 +120,30 @@
           <p>備考欄</p>
           <a href="#">他にも詳しい機能についてはこちらから</a>
       </div>
-          
+      </div>
      <div id="box">
       <h2>今すぐサイトを作ろう</h2>
     
      <form action="./new" method="post">
       @csrf
-     <div id="box">
+      <div id="box">
       <div id="box1">
-        <input type="text" placeholder="メールアドレス info@example.jp" name="mail"/>
+        <input type="text" id="mail2" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
        <span class="input-wrap">
           <input type="password" id="pw2" placeholder="パスワード 英数字６文字以上" name="pw"/>
           <i class="toggle-pass fa fa-eye-slash"></i>
         </span>
        <p id="pwtext" style="color:#c90505;"></p> 
-        <input type="text" placeholder="サイトURL（３文字以上）"name="url"/>
+        <input type="text" id="url2" placeholder="サイトURL（３文字以上）"name="url"/>
        
        <select id="urlselect" name="domain">
-       <option>lime.shop</option>
-       <option>shopselect.net</option>
-       <option>lime.ec</option>
-       <option>theshop.jp</option>
+       <option value="lime.shop" selected>lime.shop</option>
+       <option value="shopselect.net">shopselect.net</option>
+       <option value="lime.ec" >lime.ec</option>
+       <option value="theshop.jp">theshop.jp</option>
          </select>
-
+         
          <p id="urltext" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
@@ -152,6 +153,7 @@
       <input type="button" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
       <p id="msgtext" style="color:#c90505;"></p>  
       </div>
+     </div>
       
       <div id="page_top"><a href="#">TOP</a></div>
 

@@ -12,6 +12,7 @@ class LoginController extends Controller
     {
         return view("login");
     }
+    //ログイン
     public function check(Request $r)
     {
         $res["success"]=true;
@@ -44,6 +45,7 @@ class LoginController extends Controller
         
         return response()->json($res);
     }
+    // 新規登録
     public function entrycheck(Request $r)
     {
         $res["success"]=true;
@@ -71,8 +73,28 @@ class LoginController extends Controller
         
         $user=MUser::create(["mail"=>$r->input("mail"),
                        "pw"=>$r->input("pw"),
-                       "url"=>$r->input("url")]);
+                       "url"=>$r->input("url") . "." . $r->input("domain")]);
                        session()->put("userid",$user->id);
         return response()->json($res);
+    }
+    public function new(Request $r)
+{
+    if ($_POST["btn2"]!=""){
+           
+
+        if($_POST["mail"]==""){
+            $emailerr="メールが入力されていません";
+        }
+
+        if($_POST["pw"]==""){
+            $pwerr="パスワードが入力されていません";
+        }
+
+        if($_POST["url"]==""){
+            $urlerr="urlが入力されていません";
+        }
+        return view("home",compact("emailerr","pwerr","urlerr"));
+
+        }
     }
 }

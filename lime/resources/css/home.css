@@ -20,9 +20,8 @@ body{
     display: flex;
 }
 
-#header li{
-    
-    border-left:solid 1px #C36;
+.explanation{
+    text-align: center;
 }
 
 

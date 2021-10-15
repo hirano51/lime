@@ -38,10 +38,17 @@ class HomeController extends Controller
             $res["error"]["mail"]="すでに登録されているメールアドレスです";
             return response()->json($res,400);
         }
+        $data = MUser::where("url", $r->input("ulr")) ->get();
+        if($data != null && count($data) > 0){
+            $res["success"]=false;
+            $res["error"]["url"]="すでに登録されているurlです";
+            return response()->json($res,400);
+        }
         
-        MUser::create(["mail"=>$r->input("mail"),
+        $user=MUser::create(["mail"=>$r->input("mail"),
                        "pw"=>$r->input("pw"),
                        "url"=>$r->input("url") . "." . $r->input("domain")]);
+                       session()->put("userid",$user->id);
         return response()->json($res);
     }
     public function new(Request $r)
@@ -65,6 +72,7 @@ class HomeController extends Controller
 
             }
         }
+        
         
         
 
