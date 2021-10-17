@@ -2,7 +2,7 @@ const { default: axios } = require("axios");
 
 $(function(){
 //新規登録とエラーの表示1
-    $("#btnText").on("click",()=>{
+    $("#btn1Text").on("click",()=>{
        // エラーメッセージの初期化
        $("#matext").text(""); 
        $("#pwtext").text("");

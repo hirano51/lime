@@ -5,7 +5,6 @@
         <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
         <link rel="title icon" href="images/favicon.ico">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><!-- pwの表示非表示切替 -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
         <link rel="stylesheet" href="css/home.css">
         <script src="js/app.js"></script>

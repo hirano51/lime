@@ -36,12 +36,15 @@ class HomeController extends Controller
         if($data != null && count($data) > 0){
             $res["success"]=false;
             $res["error"]["mail"]="すでに登録されているメールアドレスです";
-            return response()->json($res,400);
+            // return response()->json($res,400);
         }
-        $data = MUser::where("url", $r->input("url")) ->get();
+        $data = MUser::where("url", $r->input("url") . "." . $r->input("domain")) ->get();
         if($data != null && count($data) > 0){
             $res["success"]=false;
             $res["error"]["url"]="すでに登録されているurlです";
+            // return response()->json($res,400);
+        }
+        if(!$res["success"]){
             return response()->json($res,400);
         }
         
