@@ -2,7 +2,7 @@ const { default: axios } = require("axios");
 
 $(function(){
 //新規登録とエラーの表示1
-    $("#btn1Text").on("click",()=>{
+    $("#btnText").on("click",()=>{
        // エラーメッセージの初期化
        $("#matext").text(""); 
        $("#pwtext").text("");
@@ -35,16 +35,16 @@ $(function(){
     //新規登録とエラーの表示2
     $("#btn2Text").on("click",()=>{
 
-        $("#matext").text(""); 
-        $("#pwtext").text("");
-        $("#urltext").text("");
+        $("#ma2text").text(""); 
+        $("#pw2text").text("");
+        $("#url2text").text("");
         axios({
             method: "POST",
             url: "home/check",
             data: {
-                mail: $("#mail").val(),
-                pw: $("#pw").val(),
-                url: $("#url").val(),
+                mail: $("#mail2").val(),
+                pw: $("#pw2").val(),
+                url: $("#url2").val(),
                 domain: $("#urlselect").val(),
             },
             contentType: "application/json",
@@ -54,9 +54,9 @@ $(function(){
          window.location.href="./menu";
         })
         .catch(error=>{
-            $("#matext").text(error.response.data.error.mail);
-            $("#pwtext").text(error.response.data.error.pw);
-            $("#urltext").text(error.response.data.error.url);
+            $("#ma2text").text(error.response.data.error.mail);
+            $("#pw2text").text(error.response.data.error.pw);
+            $("#url2text").text(error.response.data.error.url);
  
         })
      });
@@ -110,4 +110,11 @@ $(function(){
           $('nav').removeClass('open');      
         }
       });
+      setTimeout(function(){
+		$('.start p').fadeIn(1600);
+	},500); //0.5秒後にロゴをフェードイン
+	setTimeout(function(){
+		$('.start').fadeOut(500);
+	},2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト
+
 });

@@ -42,14 +42,14 @@
         <!-- 新規登録 -->
         <div id="newbox" style="display:none;">
             <div id="box1">
-              <input type="text" placeholder="メールアドレス info@example.jp" id="mail1" name="mail"/>
+              <input type="text" placeholder="メールアドレス info@example.jp" id="mail" name="mail"/>
              <p id="matext" style="color:#c90505;"></p> 
              <span class="input-wrap">
-          <input type="password" id="pw1" placeholder="パスワード 英数字６文字以上" name="pw"/>
+          <input type="password" id="pw" placeholder="パスワード 英数字６文字以上" name="pw"/>
           <i class="toggle-pass fa fa-eye-slash"></i>
         </span>
              <p id="pwtext" style="color:#c90505;"></p> 
-              <input type="text" placeholder="サイトURL（３文字以上）" id="url1" name="url"/>
+              <input type="text" placeholder="サイトURL（３文字以上）" id="url" name="url"/>
              <p id="urltext" style="color:#c90505;"></p>  
              <select id="urlselect">
                       <option>lime.shop</option>
@@ -68,6 +68,8 @@
              
             </div>
         </div>
+
+        
 </from>
     
     </body>

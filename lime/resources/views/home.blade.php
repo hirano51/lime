@@ -65,7 +65,6 @@
       </div>
       <div id="box3">
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
-      <p id="msgtext" style="color:#c90505;"></p>  
       </div>
      </div>
       </form>
@@ -126,34 +125,33 @@
     
      <form action="./new" method="post">
       @csrf
-      <div id="box">
+     <div id="box">
       <div id="box1">
         <input type="text" id="mail2" placeholder="メールアドレス info@example.jp" name="mail"/>
-       <p id="matext" style="color:#c90505;"></p> 
+       <p id="ma2text" style="color:#c90505;"></p> 
        <span class="input-wrap">
           <input type="password" id="pw2" placeholder="パスワード 英数字６文字以上" name="pw"/>
           <i class="toggle-pass fa fa-eye-slash"></i>
         </span>
-       <p id="pwtext" style="color:#c90505;"></p> 
-        <input type="text" id="url2" placeholder="サイトURL（３文字以上）"name="url"/>
+       <p id="pw2text" style="color:#c90505;"></p> 
+        <input type="text" id=url2 placeholder="サイトURL（３文字以上）"name="url"/>
        
-       <select id="urlselect" name="domain">
-       <option value="lime.shop" selected>lime.shop</option>
-       <option value="shopselect.net">shopselect.net</option>
-       <option value="lime.ec" >lime.ec</option>
-       <option value="theshop.jp">theshop.jp</option>
+       <select id="urlselect">
+       <option>lime.shop</option>
+       <option>shopselect.net</option>
+       <option>lime.ec</option>
+       <option>theshop.jp</option>
          </select>
-         
-         <p id="urltext" style="color:#c90505;"></p>  
+
+         <p id="url2text" style="color:#c90505;"></p>  
       </div>
       <div id="box2">
         <p><a href="#">利用規約</a>・<a href="#">プライバシーポリシー</a>に同意の上ご利用ください</p>
       </div>
       <div id="box3">
       <input type="button" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
-      <p id="msgtext" style="color:#c90505;"></p>  
       </div>
-     </div>
+</div>
       
       <div id="page_top"><a href="#">TOP</a></div>
 
@@ -169,6 +167,11 @@
               <li><a href="#">QRコード作成</a></li>
       </div>
 
+      <div class="start">
+    <p><img src="images/LIME.png"  alt="スタート画面"></p>
+</div>
+      
+</div>
 
     </body>
 </html>

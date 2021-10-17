@@ -77,4 +77,5 @@ $(".toggle-pass").on("click", (e) => {
       input.attr('type','text');
     }
 });
+
 });
