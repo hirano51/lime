@@ -18,11 +18,30 @@
       
     <img src="images/pen.png"  alt="編集ボタン"/>
   </div>
+
+  <form id="imgform"> 
   <nav>
     <ul>
-      <li><a href="./edit">編集開始</a></li>
+    <li>
+      <p>背景画像:</p>
+      <input type="file" name="bgimg">
+      <input type="button" id="bgimgbtn" value="アップロード">
+      
+  </li>
+    <li>
+      <p>トップ画像:</p>
+      <input type="file" name="topimg">
+      <input type="button" id="topimgbtn" value="アップロード">
+  </li>
+  <li>
+      <p>カテゴリー</p>
+      <input type="text" id="category">
+      <input type="button" id="categorybtn" value="追加">
+  </li>
     </ul>
   </nav>
+</form>
+
   <div class="overlay"></div>
    
 　　

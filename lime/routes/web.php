@@ -28,6 +28,9 @@ Route::get("/login", [LoginController::class, "index"])->name("login.index");
 Route::post("/login/check", [LoginController::class, "check"]);
 Route::post("/login/entrycheck", [LoginController::class, "entrycheck"]);
 Route::get("/menu", [MenuController::class, "index"])->name("menu.index");
+Route::post("/menu/bgimgupload", [MenuController::class, "bgimgupload"])->name("menu.bgimgupload");
+Route::post("/menu/topimgupload", [MenuController::class, "topimgupload"])->name("menu.topimgupload");
+Route::post("/menu/addcategory", [MenuController::class, "addcategory"])->name("menu.addcategory");
 Route::get("/edit", [EditController::class, "index"])->name("edit.index");
 Route::get("/notice", [NoticeController::class, "index"])->name("notice.index");
 

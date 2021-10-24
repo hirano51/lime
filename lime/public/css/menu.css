@@ -95,7 +95,7 @@ main p {
 }
 
 nav {
-  width: 250px;
+  width: 480px;     /* 編集幅 */
   height: 100%;
   padding-top: 100px;
   background-color: rgba(152, 156, 163, 0.8);
@@ -103,7 +103,7 @@ nav {
   top: 0;
   right: 0;
   z-index: 10;
-  transform: translate(250px);
+  transform: translate(480px);     /* 編集幅 */
   transition: all .5s;
 }
 nav.open {
@@ -122,6 +122,16 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* トップ画像 */
+#userimage{
+  text-align: center;
+}
+
+/* メニュータイトル・検索 */
+#menu{
+  text-align: center;
 }
 
 

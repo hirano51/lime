@@ -27,5 +27,54 @@ $(function(){
           $('main').removeClass('open');
           $('nav').removeClass('open');      
         }
-      });                                                            
+      });
+      $("#bgimgbtn").on("click",function(){
+       var form=new FormData($("#imgform").get(0));
+        axios({      
+        method: "POST",
+        url: "menu/bgimgupload",
+        data: form,
+        contentType: false,
+        dataType: "html"
+    })
+    .then(response => {
+      window.location.href="./menu";
+    })
+    .catch(error=>{
+        
+    })
+      });
+      $("#topimgbtn").on("click",function(){
+        var form=new FormData($("#imgform").get(0));
+         axios({      
+         method: "POST",
+         url: "menu/topimgupload",
+         data: form,
+         contentType: false,
+         dataType: "html"
+     })
+     .then(response => {
+       window.location.href="./menu";
+     })
+     .catch(error=>{
+         
+     })
+       });
+       $("#categorybtn").on("click",function(){
+         axios({      
+         method: "POST",
+         url: "menu/addcategory",
+         data: {
+          category:$("#category").val(),
+         },
+         contentType: "application/json",
+            dataType: "json"
+     })
+     .then(response => {
+       window.location.href="./menu";
+     })
+     .catch(error=>{
+         
+     })
+       });                                                                  
  });                                                                                                              
