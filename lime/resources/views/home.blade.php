@@ -35,8 +35,9 @@
 </div>
        
       
-      <div id="sample1">
-       <img src="images/sample.jpg" alt="タイトル"/>
+      <div class="title">
+       <img src="images/home2.jpg"  alt="タイトル"/>
+       <p >安心した食事を<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>
       </div>
       
      <div id="box">
