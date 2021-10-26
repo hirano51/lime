@@ -77,5 +77,24 @@ $(".toggle-pass").on("click", (e) => {
       input.attr('type','text');
     }
 });
+$("#tabLogin").on("click", () => {
+    if ($('#tabLogin').hasClass('selected')) {
+        return;
+    }
+    $('#tabLogin').addClass('selected');
+    $('#tabEntry').removeClass('selected');
 
+    $('#entryForm').hide();
+    $('#loginForm').show();
+});
+$("#tabEntry").on("click", () => {
+    if ($('#tabEntry').hasClass('selected')) {
+        return;
+    }
+    $('#tabEntry').addClass('selected');
+    $('#tabLogin').removeClass('selected');
+
+    $('#loginForm').hide();
+    $('#entryForm').show();
+});
 });

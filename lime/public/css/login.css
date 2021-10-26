@@ -1,5 +1,4 @@
 @charset"utf-8";
-/* 後で消すこと */
 
 
 body{
@@ -8,16 +7,117 @@ body{
     text-align: center;   
 }
 
-.input-wrap{
-    position: relative;
-}
-     
-.toggle-pass{
-    position:absolute;
-    top:50%;
-    right: 10px;
-    transform: translateY(-50%);
+.login_box {
+    margin: 70px auto;
+    width: 480px;
+    text-align: center;
+    padding: 0px 0px 40px 0px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.25);
+    background-color: #d0effd;
 }
 
+.login_box > .tab {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.login_box > .tab > .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 50px;
+    color: #5860db;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.login_box > .tab > .item.selected {
+    background-color: #98c4ec;
+    color: #8a8b8f;
+}
+
+.login_box > .tab > .item:hover {
+    color: #8a8b8f;
+}
+
+.login_box > .tab > .item:nth-of-type(1) {
+    border-bottom: 1px solid #75dbf5;
+    border-right: 1px solid #75dbf5;
+    border-top-left-radius: 6px;
+}
+
+.login_box > .tab > .item:nth-of-type(2) {
+    border-bottom: 1px solid #75dbf5;
+    border-top-right-radius: 6px;
+}
+
+.input_field {
+    margin-top: 30px;
+    height: 50px;
+}
+
+.input_field > input {
+    color:#575656;
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 5px 5%;
+    border:1px solid #ccc;
+    border-radius: 6px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #fff;
+    font-size: 20px;
+    letter-spacing: .8px;
+    outline:none;
+}
+
+.input_field > select {
+    color:#575656;
+    margin: auto;
+    display: block;
+    width: 90%;
+    height: 40px;
+    padding: 5px 5%;
+    border:1px solid #ccc;
+    border-radius: 6px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #fff;
+    font-size: 20px;
+    letter-spacing: .8px;
+    outline:none;
+}
+
+.input_field > .error_label {
+    color: #f3598d;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.login_btn {
+    margin-bottom: 0px;
+    background: #1b70cc;
+    color: #bdd1e6;
+    border : 0;
+    width : 90%;
+    height : 45px;
+    border-radius : 6px;
+    font-size : 20px;
+    cursor : pointer;
+    transition : background 0.3s ease-in-out;
+}
+.login_btn:hover {
+    background: #54dbec;
+    color: #3152e6;
+}
 
 

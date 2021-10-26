@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>アレルギー表</title>
         <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> <!--背面画像の切替-->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
         <script src="js/app.js"></script>
         <script src="js/menu.js"></script>
     </head>
@@ -37,6 +40,20 @@
       <p>カテゴリー</p>
       <input type="text" id="category">
       <input type="button" id="categorybtn" value="追加">
+  </li>
+  <li>
+  <div class="dialog" id="sample-dialog">
+  <div class="dialog-header">
+    <span class="dialog-title">サンプルダイアログ</span>
+    <button type="button" class="dialog-close">
+      閉じる☓
+    </button>
+  </div>
+  <div class="dialog-content">
+    <p>ダイアログです</p>
+  </div>
+</div>
+<button id="open-sample-dialog">ダイアログを開く</button>
   </li>
     </ul>
   </nav>
