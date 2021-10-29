@@ -16,8 +16,8 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-    position: fixed;
-    display: flex;
+    /* position: fixed; */
+    /* display: flex; */
 }
 
 .title {/*親div*/
@@ -40,6 +40,10 @@ body{
 
 .titleion{
     text-align: center;
+}
+
+.tes{
+
 }
 
 
@@ -89,6 +93,7 @@ body{
     text-align: center;
   }
   .menu-trigger {
+    background-color: #1FF;
     display: inline-block;
     width: 36px;
     height: 28px;

@@ -16,7 +16,7 @@
      <form action="./new" method="post">
      @csrf
       <div id="header">
-       <a href="#"><img class="icon" src="images/LIME.png" alt="アイコン"/></a>
+      　<img class="icon" src="images/LIME.png" alt="アイコン"/>
        
 
        <div class="menu-trigger" href="">
@@ -36,8 +36,8 @@
        
       
       <div class="title">
-       <img src="images/home2.jpg"  alt="タイトル"/>
-       <p >安心した食事を<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>
+       <img src="images/home2.jpg" id="bgtitle" alt="タイトル"/>
+       <p id="tes">安心した食事を<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>
       </div>
       
      <div id="box">
