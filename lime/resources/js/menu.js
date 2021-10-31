@@ -1,6 +1,25 @@
 const { default: axios } = require("axios");
 
 $(function(){
+  const getmenuitem=()=>{
+    axios({      
+      method: "POST",
+      url: "menu/getmenuitem",
+      data: {
+       category:$("#menuselect").val(),
+       text:$("#search").val(),
+      },
+      contentType: "application/json",
+         dataType: "json"
+  })
+  .then(response => {
+    $("#response").html(response.data);
+  })
+  .catch(error=>{
+      
+  })
+  }
+  getmenuitem();
     $('.mask').on('click', function(){
         var obj = $(this).parent('div');
         var checkbox = $(obj).find('input');
@@ -77,16 +96,34 @@ $(function(){
          
      })
        });
-       $("#open-sample-dialog").on("click", function(){
-        //leftの値 = (ウィンドウ幅 -コンテンツ幅) ÷ 2
-        var leftPosition = (($(window).width() - $("#sample-dialog").outerWidth(true)) / 2);
-        //CSSを変更
-        $("#sample-dialog").css({"left": leftPosition + "px"});
-        //ダイアログを表示する
-        $("#sample-dialog").show();
-      });
-      //閉じるボタンで非表示
-      $(".dialog-close").on("click", function(){
-        $(this).parents(".dialog").hide();
-      });                                                              
+         $("#menuselect").on("change",function(){
+           getmenuitem();
+         }); 
+         $("#searchbtn").on("click",function(){
+          getmenuitem();
+        });      
+        $("#menubtn").on("click",function(){
+          $("#menuinput").fadeIn();
+        });
+        $("#background").on("click",function(){
+          $("#menuinput").fadeOut();
+        });
+        $("#menuentry").on("click",function(){
+          axios({      
+            method: "POST",
+            url: "menu/menuentry",
+            data: {
+             data:$("#menuform").serialize(),
+            },
+            contentType: "application/json",
+               dataType: "json"
+        })
+        .then(response => {
+          $("#menuinput").fadeOut();
+          getmenuitem();
+        })
+        .catch(error=>{
+            
+        })
+        });                                                  
  });                                                                                                              

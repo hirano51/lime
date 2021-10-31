@@ -31,6 +31,8 @@ Route::get("/menu", [MenuController::class, "index"])->name("menu.index");
 Route::post("/menu/bgimgupload", [MenuController::class, "bgimgupload"])->name("menu.bgimgupload");
 Route::post("/menu/topimgupload", [MenuController::class, "topimgupload"])->name("menu.topimgupload");
 Route::post("/menu/addcategory", [MenuController::class, "addcategory"])->name("menu.addcategory");
+Route::post("/menu/getmenuitem", [MenuController::class, "getmenuitem"]);
+Route::post("/menu/menuentry", [MenuController::class, "menuentry"]);
 Route::get("/edit", [EditController::class, "index"])->name("edit.index");
 Route::get("/notice", [NoticeController::class, "index"])->name("notice.index");
 
