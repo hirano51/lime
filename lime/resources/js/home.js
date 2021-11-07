@@ -75,9 +75,9 @@ $(function(){
         var pagetop = $('#page_top');
         // ボタン非表示
         pagetop.hide();
-        // 2500px スクロールしたらボタン表示
+        //  スクロールしたらボタン表示
         $(window).scroll(function () {
-           if ($(this).scrollTop() > 2500) {
+           if ($(this).scrollTop() > 500) {
                 pagetop.fadeIn();
            } else {
                 pagetop.fadeOut();
@@ -88,27 +88,21 @@ $(function(){
            return false;
         });
       });
-      //ハンバーガーラインの作成
-      $('.menu-trigger').on('click',function(){
-        if($(this).hasClass('active')){
-          $(this).removeClass('active');
-          $('main').removeClass('open');
-          $('nav').removeClass('open');
-          $('.overlay').removeClass('open');
-        } else {
-          $(this).addClass('active');
-          $('main').addClass('open');
-          $('nav').addClass('open');
-          $('.overlay').addClass('open');
-        }
+      //ハンバーガーメニュー 
+      $(function() {
+        $('.btn-gNav').on("click", function(){
+      
+          $(this).toggleClass('open');
+          $('#gNav').toggleClass('open');
+        });
+      
       });
-      $('.overlay').on('click',function(){
-        if($(this).hasClass('open')){
-          $(this).removeClass('open');
-          $('.menu-trigger').removeClass('active');
-          $('main').removeClass('open');
-          $('nav').removeClass('open');      
-        }
+      
+      // メニューをクリックされたら、非表示にする
+      $(function() {
+        $('.gNav-menu li a').on("click", function(){
+           $('#gNav').removeClass('open');
+        });
       });
       setTimeout(function(){
 		$('.start p').fadeIn(1600);

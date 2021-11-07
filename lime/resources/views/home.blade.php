@@ -16,29 +16,33 @@
      <form action="./new" method="post">
      @csrf
       <div id="header">
-      　<img class="icon" src="images/LIME.png" alt="アイコン"/>
-       
-
-       <div class="menu-trigger" href="">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="./login">新規登録</a></li>
-      <li><a href="./login">ログイン</a></li>
-      <li><a href="#">機能紹介</a></li>
-    </ul>
-  </nav>
-  <div class="overlay"></div>
-</div>
-       
-      
       <div class="title">
        <img src="images/home2.jpg" id="bgtitle" alt="タイトル"/>
        <p id="tes">安心した食事を<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>
       </div>
+      
+      　<img class="icon" src="images/LIME.png" alt="アイコン"/>
+       
+
+      <div id="hamburger">
+  <p class="btn-gNav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </p>
+  <nav id="gNav" class="">
+    <ul class="gNav-menu">
+    <li><a href="./login">新規登録</a></li>
+      <li><a href="./login">ログイン</a></li>
+      <li><a href="#">機能紹介</a></li> 
+    </ul>
+  </nav>
+</div>
+  
+  
+       
+      
+      
       
      <div id="box">
       <div id="box1">

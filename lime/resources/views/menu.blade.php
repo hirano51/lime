@@ -62,7 +62,8 @@
 　　
 　　<div id="menu">
 　　    <h1>〜menu〜</h1>
-<select id="menuselect">  <!-- メニューの種類　※利用者入力項目　　 -->
+<!-- メニューのカテゴリー -->
+<select id="menuselect">
 @foreach($category as $item)
 <option value="{{$item->id}}">{{$item->name}}</option>
 @endforeach
@@ -92,7 +93,13 @@
 <div id="attachment">
 
     <!-- メニュー画像　　※利用者画像挿入 -->
-    <select name="menucategory">  <!-- メニューの種類　※利用者入力項目　　 -->
+    <label for="">
+    <div id="menuimage">
+    <input type="file" accept="image/*" name="menuimg">
+    </div>
+    </label>
+    <!-- メニューの種類　※利用者入力項目　　 -->
+    <select name="menucategory">  
 @foreach($category as $item)
 <option value="{{$item->id}}">{{$item->name}}</option>
 @endforeach
