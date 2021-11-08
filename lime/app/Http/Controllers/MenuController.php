@@ -99,11 +99,11 @@ public function menuentry(Request $r)
    $base=TBase::where("user_id",session()->get("userid"))->first();  
    TMenu::create(["base_id"=>$base->id,
                     "category_id"=>$param["menucategory"],
-                        "name"=>$param["menuname"],
-                            "price"=>$param["menuprice"],
-                                "cal"=>$param["menucal"],
-                            "comment"=>"",
-                        "img"=>"",
+                    "name"=>$param["menuname"],
+                    "price"=>$param["menuprice"],
+                    "cal"=>$param["menucal"],
+                    "comment"=>"",
+                    "img"=>"",
                     "allergies_1"=>isset($param["allergies1"]) ? 1 : 0,
                     "allergies_2"=>isset($param["allergies2"]) ? 1 : 0,
                     "allergies_3"=>isset($param["allergies3"]) ? 1 : 0,
@@ -134,5 +134,10 @@ public function menuentry(Request $r)
                     "allergies_28"=>isset($param["allergies28"]) ? 1 : 0]);
     $res["success"]=true;
     return response()->json($res);                           
+}
+public function menudelete(Request $r){
+    TMenu::destroy($r->input("menuid"));
+    $res["success"]=true;
+    return response()->json($res);     
 }
 }

@@ -1,4 +1,5 @@
-　　<!-- 画像からカロリーまでのブロック -->
+<!-- サイトに表示される方のブロック-->
+<!-- 画像からカロリーまでのブロック -->
 @if(!is_null($menu))
 @foreach($menu as $item)
 <div id="attachment">
@@ -223,6 +224,8 @@
 　　         <div id="cal">
 　　        <p><input type="text" placeholder="カロリー" value="{{$item->cal}}"/>cal</p>  
 　　         </div>
+<input type="hidden"data-type="menuid" value="{{$item->id}}">
+<input type="button" value="削除" class="menudelete">
 </div>
 @endforeach
 @else

@@ -69,10 +69,7 @@
 @endforeach
        
   </select> 
-         
-　　　<!-- メニュー検索 -->
-    <!-- <input type="text" id="search" placeholder="メニュー検索" name="search"/>
-    <input type="button" id="searchbtn" value="検索" name="searchbtn"/> -->
+        
 　　</div>
 
 <div id="response">
@@ -93,17 +90,19 @@
 <div id="attachment">
 
     <!-- メニュー画像　　※利用者画像挿入 -->
-    <label for="">
-    <div id="menuimage">
-    <input type="file" accept="image/*" name="menuimg">
+    <label for="menuimage">
+    <div id="image">
+    <input type="file" id="menuimage" accept="image/*" name="menuimage">
+    <img id="prev">
     </div>
     </label>
     <!-- メニューの種類　※利用者入力項目　　 -->
+    <div>
     <select name="menucategory">  
 @foreach($category as $item)
 <option value="{{$item->id}}">{{$item->name}}</option>
 @endforeach
-
+   </div>
     <!-- メニュー値段　　※利用者入力項目 -->
 　 <div id="name">
 　  <p><input type="text" placeholder="品名" name="menuname" /></p> 
@@ -314,7 +313,7 @@
     
             <!-- カロリー記載　※利用者記載　 -->
 　　         <div id="cal">
-　　        <p><input type="text" placeholder="カロリー" name="menucal"/>cal</p>  
+　　        <p><input type="text" placeholder="カロリー" name="menucal"/>kcal</p>  
 　　         </div>
 <div>
   <input type="button" id="menuentry" value="追加する">

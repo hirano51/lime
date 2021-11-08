@@ -14,6 +14,7 @@ $(function(){
   })
   .then(response => {
     $("#response").html(response.data);
+    setevent();
   })
   .catch(error=>{
       
@@ -125,5 +126,35 @@ $(function(){
         .catch(error=>{
             
         })
-        });                                                  
+        });  
+          //メニュー画像のプレビュー 
+        $("#menuimage").on("change",function(e){
+        var reader=new FileReader();
+        reader.onload=function(e){
+        $("#prev").attr("src",e.target.result);
+        }
+        reader.readAsDataURL(e.target.files[0]);
+        });
+        
+        function setevent(){
+         //メニューの削除 
+        $(".menudelete").on("click",function(){
+          axios({      
+            method: "POST",
+            url: "menu/menudelete",
+            data: {
+            menuid:$(this).parent().find('input[data-type="menuid"]').val(),
+            },
+            contentType: "application/json",
+               dataType: "json"
+        })
+        .then(response => {
+          
+          getmenuitem();
+        })
+        .catch(error=>{
+            
+        })
+        });
+      }                                      
  });                                                                                                              
