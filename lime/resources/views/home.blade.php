@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="jp">
-    <head>
+  <head>
         <meta charset="UTF-8">
         <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
         <link rel="title icon" href="images/favicon.ico">
@@ -9,19 +9,17 @@
         <link rel="stylesheet" href="css/home.css">
         <script src="js/app.js"></script>
         <script src="js/home.js"></script>
-    </head>
+  </head>
     
-    <body>
+  <body>
       
      <form action="./new" method="post">
      @csrf
-      <div id="header">
-      <div class="title">
-       <img src="images/home2.jpg" id="bgtitle" alt="タイトル"/>
-       <p id="tes">安心した食事を<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>
-      </div>
-      
-      　<img class="icon" src="images/LIME.png" alt="アイコン"/>
+     <div class="example">
+  <img src= "images/home2.jpg" id="bgtitle" alt="タイトル"/>
+  <p><img class="icon" src="images/LIME.png" ></i>〜安心した食事を〜<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>	
+</div>
+     
        
 
       <div id="hamburger">
@@ -44,7 +42,7 @@
       
       
       
-     <div id="box">
+     <!-- <div id="box">
       <div id="box1">
         <input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
@@ -71,7 +69,7 @@
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       </div>
      </div>
-      </form>
+      </form> -->
      <div class="explanation">
       <div id="descriptio1">
           <h2>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</h2>
@@ -125,7 +123,7 @@
       </div>
       </div>
       </div>
-</div>
+
      <div id="box">
       <h2>今すぐサイトを作ろう</h2>
     
@@ -157,7 +155,9 @@
       <div id="box3">
       <input type="button" id="btn2Text" value="無料でサイトを開設する" name="btn2"/>
       </div>
-</div>
+　　　 </div>
+      </div>
+  </div>
       
       <div id="page_top"><a href="#">TOP</a></div>
 
@@ -170,7 +170,6 @@
               <li><a href="#">利用規約</a></li>
               <li><a href="#">プライバシーポリシー</a></li>
               <li><a href="#">機能紹介</a></li>
-              <li><a href="#">QRコード作成</a></li>
       </div>
 
       <div class="start">
