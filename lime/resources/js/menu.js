@@ -156,5 +156,38 @@ $(function(){
             
         })
         });
-      }                                      
+      }
+      $("#templatebtn").on("click",function(){
+        axios({      
+          method: "POST",
+          url: "menu/templateupdate",
+          data: {
+           name:$("#templatename").val(),
+          },
+          contentType: "application/json",
+             dataType: "json"
+      })
+      .then(response => {
+        window.location.href="./menu";
+      })
+      .catch(error=>{
+          
+      })
+      });   
+      $("#switchbtn").on("click",function(){
+        axios({      
+          method: "POST",
+          url: "menu/templateswitch",
+          data: {
+           id:$("#tenpselect").val(),
+          },
+          contentType: "application/json",
+             dataType: "json"
+      })
+      .then(response => {
+        window.location.href="./menu";
+      })
+      .catch(error=>{
+      })
+    });                                     
  });                                                                                                              

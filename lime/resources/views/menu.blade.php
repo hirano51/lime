@@ -25,6 +25,22 @@
   <form id="imgform"> 
   <nav>
     <ul>
+      <li>
+      <p>現在のメニュー編成:{{$base->name}}</p>
+      <input type="text" id="templatename" value="{{$base->name}}">
+      <input type="button" id="templatebtn" value="編成登録">
+      </li>
+      <li><select id="tenpselect">
+@foreach($tenplist as $item)
+@if($item["value"]==$base->id)
+<option value='{{$item["value"]}}' selected>{{$item["text"]}}</option>
+@else
+<option value='{{$item["value"]}}'>{{$item["text"]}}</option>
+@endif
+@endforeach
+</select>
+<input type="button" id="switchbtn" value="編成切替">
+</li>
     <li>
       <p>背景画像:</p>
       <input type="file" name="bgimg">

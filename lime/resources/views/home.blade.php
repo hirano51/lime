@@ -41,8 +41,8 @@
        
       
       
-      
-     <!-- <div id="box">
+      <!-- 新規登録１ -->
+      <div id="box">
       <div id="box1">
         <input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
@@ -69,7 +69,7 @@
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       </div>
      </div>
-      </form> -->
+      </form>
      <div class="explanation">
       <div id="descriptio1">
           <h2>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</h2>
@@ -129,6 +129,7 @@
     
      <form action="./new" method="post">
       @csrf
+      <!-- 新規登録２ -->
      <div id="box">
       <div id="box1">
         <input type="text" id="mail2" placeholder="メールアドレス info@example.jp" name="mail"/>

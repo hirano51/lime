@@ -34,6 +34,8 @@ Route::post("/menu/addcategory", [MenuController::class, "addcategory"])->name("
 Route::post("/menu/getmenuitem", [MenuController::class, "getmenuitem"]);
 Route::post("/menu/menuentry", [MenuController::class, "menuentry"]);
 Route::post("/menu/menudelete", [MenuController::class, "menudelete"]);
+Route::post("/menu/templateupdate", [MenuController::class, "templateupdate"]);
+Route::post("/menu/templateswitch", [MenuController::class, "templateswitch"]);
 Route::get("/edit", [EditController::class, "index"])->name("edit.index");
 Route::get("/notice", [NoticeController::class, "index"])->name("notice.index");
 

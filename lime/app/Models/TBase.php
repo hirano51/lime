@@ -13,4 +13,8 @@ class TBase extends Model
 
     const CREATED_AT=null;
     const UPDATED_AT=null;
+    public static function getselectedbase($userid){
+    return TBase::where(["user_id"=>$userid,
+                        "selected"=>1])->first();
+    }
 }

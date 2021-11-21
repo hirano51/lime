@@ -16,6 +16,8 @@ class CreateTBaseTable extends Migration
         Schema::create('t_base', function (Blueprint $table) {
             $table->increments("id");
             $table->integer("user_id");
+            $table->string("name");
+            $table->integer("selected");
             $table->string("top_img");
             $table->string("bg_img");
             $table->string("comment");

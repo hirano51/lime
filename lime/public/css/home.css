@@ -186,7 +186,7 @@ width: 100%;
 #footer {
 	width: 100%;
 	padding: 3px 0 3px 0;
-	background: #1FF;
+	background-color: rgba(199, 195, 195, 0.5);
 	font-weight: bold;
 	text-align: left;
 }

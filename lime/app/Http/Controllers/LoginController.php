@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MUser;
+use App\Models\TBase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -75,6 +76,18 @@ class LoginController extends Controller
                        "pw"=>$r->input("pw"),
                        "url"=>$r->input("url") . "." . $r->input("domain")]);
                        session()->put("userid",$user->id);
+                       for($i=0;$i<5;$i++){
+                        TBase::create(["user_id"=>$user->id,
+                            "name"=>"",
+                            "selected"=>$i==0 ? 1 : 0,
+                            "top_img"=>"",
+                            "bg_img"=>"",
+                            "comment"=>"",
+                            "inuse"=>1,
+                            "editing"=>0,
+                            "edit_end_date"=>"0",
+                            "edit_end_time"=>"0"]);
+                    }
         return response()->json($res);
     }
     public function new(Request $r)

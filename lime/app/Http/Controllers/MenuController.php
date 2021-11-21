@@ -13,7 +13,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $base=TBase::where("user_id",session()->get("userid"))->first();
+        $base=TBase::getselectedbase(session()->get("userid"));
         $menu=null;
         $category=null;
         if($base!=null){
@@ -25,7 +25,12 @@ class MenuController extends Controller
         ])->get();
         }
         }
-        return view("menu",compact("base","menu","category"));
+        $base2=TBase::where("user_id",session()->get("userid"))->get()->sortBy("id");
+        $tenplist=array();
+        for($i=0;$i<count($base2);$i++){
+            $tenplist[$i]=["text"=>($i+1).":".$base2[$i]->name,"value"=>$base2[$i]->id];
+        }
+        return view("menu",compact("base","menu","category","tenplist"));
     } 
     public function bgimgupload()
     {
@@ -43,7 +48,7 @@ class MenuController extends Controller
             $res["error"]["bgimg"]="画像のアップロードに失敗しました";
             return response()->json($res,400);
         }
-        TBase::where("user_id",session()->get("userid"))->update(["bg_img"=>$filename]);
+        $base=TBase::getselectedbase(session()->get("userid"))->update(["bg_img"=>$filename]);
         $res["success"]=$result;
         return response()->json($res);
 
@@ -64,7 +69,7 @@ class MenuController extends Controller
             $res["error"]["topimg"]="画像のアップロードに失敗しました";
             return response()->json($res,400);
         }
-        TBase::where("user_id",session()->get("userid"))->update(["top_img"=>$filename]);
+        $base=TBase::getselectedbase(session()->get("userid"))->update(["top_img"=>$filename]);
         $res["success"]=$result;
         return response()->json($res);
 
@@ -76,7 +81,7 @@ public function addcategory(Request $r)
         $res["error"]["errorcategory"]="カテゴリーが入力されていません";
         return response()->json($res,400);
     }
-    $base=TBase::where("user_id",session()->get("userid"))->first();
+    $base=TBase::getselectedbase(session()->get("userid"));
     TCategory::create(["base_id"=>$base->id,
                        "name"=>$r->input("category")]);
                        $res["success"]=true;
@@ -84,7 +89,7 @@ public function addcategory(Request $r)
 }
 public function getmenuitem(Request $r)
 {
-    $base=TBase::where("user_id",session()->get("userid"))->first();
+    $base=TBase::getselectedbase(session()->get("userid"));
     $cond=[["base_id",$base->id],["category_id",$r->input("category")]];
     if(!empty($r->input("text"))){
     $cond=array_merge($cond,[["name","like","%".$r->input("text")."%"]]);
@@ -96,7 +101,7 @@ public function menuentry(Request $r)
 {
    $param=array();
    parse_str($r["data"],$param);
-   $base=TBase::where("user_id",session()->get("userid"))->first();  
+   $base=TBase::getselectedbase(session()->get("userid"));
    TMenu::create(["base_id"=>$base->id,
                     "category_id"=>$param["menucategory"],
                     "name"=>$param["menuname"],
@@ -139,5 +144,16 @@ public function menudelete(Request $r){
     TMenu::destroy($r->input("menuid"));
     $res["success"]=true;
     return response()->json($res);     
+}
+public function templateupdate(Request $r){
+$base=TBase::getselectedbase(session()->get("userid"))->update(["name"=>$r->input("name")]);
+$res["success"]=true;
+return response()->json($res);        
+}
+public function templateswitch(Request $r){
+TBase::where("user_id",session()->get("userid"))->update(["selected"=>0]);
+TBase::where("id",$r->input("id"))->update(["selected"=>1]);
+$res["success"]=true;
+return response()->json($res);        
 }
 }
