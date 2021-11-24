@@ -88,27 +88,4 @@ $(function(){
            return false;
         });
       });
-      //ハンバーガーメニュー 
-      $(function() {
-        $('.btn-gNav').on("click", function(){
-      
-          $(this).toggleClass('open');
-          $('#gNav').toggleClass('open');
-        });
-      
-      });
-      
-      // メニューをクリックされたら、非表示にする
-      $(function() {
-        $('.gNav-menu li a').on("click", function(){
-           $('#gNav').removeClass('open');
-        });
-      });
-      setTimeout(function(){
-		$('.start p').fadeIn(1600);
-	},500); //0.5秒後にロゴをフェードイン
-	setTimeout(function(){
-		$('.start').fadeOut(500);
-	},2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト
-
 });

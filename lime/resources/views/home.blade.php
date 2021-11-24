@@ -19,30 +19,29 @@
   <img src= "images/home2.jpg" id="bgtitle" alt="タイトル"/>
   <p><img class="icon" src="images/LIME.png" ></i>〜安心した食事を〜<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>	
 </div>
-     
-       
 
-      <div id="hamburger">
-  <p class="btn-gNav">
-    <span></span>
-    <span></span>
-    <span></span>
-  </p>
-  <nav id="gNav" class="">
-    <ul class="gNav-menu">
-    <li><a href="./login">新規登録</a></li>
-      <li><a href="./login">ログイン</a></li>
-      <li><a href="#">機能紹介</a></li> 
-    </ul>
+       
+<!-- <div id="global">
+  <button class="button">
+    <span> </span>
+    <span> </span>
+    <span> </span>
+  </button>
+  <nav class="items">
+    <a href="./login" class="item">新規登録</a>
+    <a href="./login" class="item">ログイン</a>
+    <a href="#" class="item">機能紹介</a>
+    
   </nav>
 </div>
-  
+<div id="overlday"> </div> -->
+     
   
        
       
       
       <!-- 新規登録１ -->
-      <div id="box">
+      <!-- <div id="box">
       <div id="box1">
         <input type="text" id="mail1" placeholder="メールアドレス info@example.jp" name="mail"/>
        <p id="matext" style="color:#c90505;"></p> 
@@ -68,7 +67,7 @@
       <div id="box3">
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       </div>
-     </div>
+     </div> -->
       </form>
      <div class="explanation">
       <div id="descriptio1">
@@ -171,6 +170,7 @@
               <li><a href="#">利用規約</a></li>
               <li><a href="#">プライバシーポリシー</a></li>
               <li><a href="#">機能紹介</a></li>
+              <!-- <a class="twitter-timeline" href="https://twitter.com/limetes1?ref_src=twsrc%5Etfw">Tweets by limetes1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
       </div>
 
       <div class="start">

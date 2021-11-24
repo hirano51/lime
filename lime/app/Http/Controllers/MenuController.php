@@ -156,4 +156,68 @@ TBase::where("id",$r->input("id"))->update(["selected"=>1]);
 $res["success"]=true;
 return response()->json($res);        
 }
+public function templatescopy(Request $r){
+$base=TBase::where("id",$r->input("srcid"))->first();
+$category=TCategory::where("base_id",$r->input("srcid"))->get();
+TBase::where("id",$r->input("distid"))->update([
+"name"=>$base->name."コピー",
+"selected"=>0,
+"top_img"=>$base->top_img,
+"bg_img"=>$base->bg_img,
+"comment"=>$base->comment,
+"inuse"=>1,
+"editing"=>0,
+"edit_end_date"=>"0",
+"edit_end_time"=>"0"]);
+TCategory::where("base_id",$r->input("distid"))->delete();
+TMenu::where("base_id",$r->input("distid"))->delete();
+foreach($category as $item){
+$menu=TMenu::where([
+    ["base_id",$base->id],
+    ["category_id",$item->id]
+])->get();
+$newcategory=TCategory::create(["base_id"=>$r->input("distid"),
+                                "name"=>$item->name]);
+
+foreach($menu as $menuitem){
+    TMenu::create(["base_id"=>$r->input("distid"),
+    "category_id"=>$newcategory->id,
+    "name"=>$menuitem->name,
+    "price"=>$menuitem->price,
+    "cal"=>$menuitem->cal,
+    "comment"=>$menuitem->comment,
+    "img"=>$menuitem->img,
+    "allergies_1"=>$menuitem->allergies_1,
+    "allergies_2"=>$menuitem->allergies_2,
+    "allergies_3"=>$menuitem->allergies_3,
+    "allergies_4"=>$menuitem->allergies_4,
+    "allergies_5"=>$menuitem->allergies_5,
+    "allergies_6"=>$menuitem->allergies_6,
+    "allergies_7"=>$menuitem->allergies_7,
+    "allergies_8"=>$menuitem->allergies_8,
+    "allergies_9"=>$menuitem->allergies_9,
+    "allergies_10"=>$menuitem->allergies_10,
+    "allergies_11"=>$menuitem->allergies_11,
+    "allergies_12"=>$menuitem->allergies_12,
+    "allergies_13"=>$menuitem->allergies_13,
+    "allergies_14"=>$menuitem->allergies_14,
+    "allergies_15"=>$menuitem->allergies_15,
+    "allergies_16"=>$menuitem->allergies_16,
+    "allergies_17"=>$menuitem->allergies_17,
+    "allergies_18"=>$menuitem->allergies_18,
+    "allergies_19"=>$menuitem->allergies_19,
+    "allergies_20"=>$menuitem->allergies_20,
+    "allergies_21"=>$menuitem->allergies_21,
+    "allergies_22"=>$menuitem->allergies_22,
+    "allergies_23"=>$menuitem->allergies_23,
+    "allergies_24"=>$menuitem->allergies_24,
+    "allergies_25"=>$menuitem->allergies_25,
+    "allergies_26"=>$menuitem->allergies_26,
+    "allergies_27"=>$menuitem->allergies_27,
+    "allergies_28"=>$menuitem->allergies_28]);
+}                                
+}
+$res["success"]=true;
+return response()->json($res);  
+}
 }

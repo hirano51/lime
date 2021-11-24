@@ -28,7 +28,7 @@
       <li>
       <p>現在のメニュー編成:{{$base->name}}</p>
       <input type="text" id="templatename" value="{{$base->name}}">
-      <input type="button" id="templatebtn" value="編成登録">
+      <input type="button" id="templatebtn" value="編成登録・編成名変更">
       </li>
       <li><select id="tenpselect">
 @foreach($tenplist as $item)
@@ -41,6 +41,19 @@
 </select>
 <input type="button" id="switchbtn" value="編成切替">
 </li>
+<li><select id="tenpcopy">
+@foreach($tenplist as $item)
+@if($item["value"]==$base->id)
+@else
+<option value='{{$item["value"]}}'>{{$item["text"]}}</option>
+@endif
+@endforeach
+</select>
+<input type="button" id="copybtn" value="上書き">
+<li>
+
+</li>
+
     <li>
       <p>背景画像:</p>
       <input type="file" name="bgimg">
@@ -56,6 +69,15 @@
       <p>カテゴリー</p>
       <input type="text" id="category">
       <input type="button" id="categorybtn" value="追加">
+  </li>
+  <li>
+  　<select id="categorydelete">
+@foreach($category as $item)
+<option value="{{$item->id}}">{{$item->name}}</option>
+@endforeach  
+  </select>    
+      <input type="button" id="categorydeletebtn" value="削除">
+      <p>選択したカテゴリーを削除します</p>
   </li>
   <li>
   <input type="button" id="menubtn" value="メニュー追加">
@@ -82,21 +104,13 @@
 <select id="menuselect">
 @foreach($category as $item)
 <option value="{{$item->id}}">{{$item->name}}</option>
-@endforeach
-       
-  </select> 
-        
+@endforeach  
+  </select>      
 　　</div>
 
 <div id="response">
 
 </div>
-　　
-　　 <div id="footer">
-          <h3>添付URL</h3>
-              <a href="#">Twitter</a></li>
-              <a href="#">Instagram</a>
-    </div>
 　　
 　　<div id="menuinput">
 <div id="background"></div>
@@ -338,6 +352,5 @@
 </form>
 </div>
 </div>
-　　
-　　
+
     </body>

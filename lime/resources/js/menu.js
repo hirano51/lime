@@ -189,5 +189,43 @@ $(function(){
       })
       .catch(error=>{
       })
-    });                                     
+    }); 
+    $("#copybtn").on("click",function(){
+      axios({      
+        method: "POST",
+        url: "menu/templatescopy",
+        data: {
+         srcid:$("#tenpselect").val(), //コピー元
+         distid:$("#tenpcopy").val(),　　//コピー先
+        },
+        contentType: "application/json",
+           dataType: "json"
+    })
+    .then(response => {
+      window.location.href="./menu";
+    })
+    .catch(error=>{
+    })
+  });    
+  function setevent(){
+    //カテゴリーの削除 
+   $(".delete").on("click",function(){
+     axios({      
+       method: "POST",
+       url: "menu/menudelete",
+       data: {
+       menuid:$(this).parent().find('input[data-type="menuid"]').val(),
+       },
+       contentType: "application/json",
+          dataType: "json"
+   })
+   .then(response => {
+     
+     getmenuitem();
+   })
+   .catch(error=>{
+       
+   })
+   });
+ }                               
  });                                                                                                              
