@@ -165,8 +165,8 @@ ul {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	font-size: 14px;
-	color: #bbff00;
+	font-size: 18px;
+	color: #ff0000;
 	top: 30%;
 	opacity: 0;
 	transition:		all 0.2s ease;
@@ -178,10 +178,10 @@ ul {
 #allergies > div > input[type="checkbox"]:checked:before {
     content: "";
     position: absolute;
-    left: -22px;
+    left: -21px;
     top:-7px;
     display: inline-block;
-    width: 125px;
+    width: 120px;
     height: 70px;
     /* チェック画像 */
     background: url(../images/check.png);

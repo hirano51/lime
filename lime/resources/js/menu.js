@@ -109,6 +109,23 @@ $(function(){
         $("#background").on("click",function(){
           $("#menuinput").fadeOut();
         });
+        const menuimageupload = (menuid)=>{
+          var form=new FormData($("#menuform").get(0));
+         axios({      
+         method: "POST",
+         url: "menu/menuimageupload?id="+menuid,
+         data: form,
+         contentType: false,
+         dataType: "html"
+     })
+     .then(response => {
+      $("#menuinput").fadeOut();
+      getmenuitem();
+     })
+     .catch(error=>{
+         
+     })
+        }
         $("#menuentry").on("click",function(){
           axios({      
             method: "POST",
@@ -120,8 +137,13 @@ $(function(){
                dataType: "json"
         })
         .then(response => {
-          $("#menuinput").fadeOut();
-          getmenuitem();
+          if($("#menuimage").val()!=""){
+            menuimageupload(response.data.menuid);
+          }else{
+            $("#menuinput").fadeOut();
+            getmenuitem();
+          }
+          
         })
         .catch(error=>{
             
@@ -156,6 +178,27 @@ $(function(){
             
         })
         });
+        //メニューの編集 
+      $(".menuupdata").on("click",function(){
+        var menuid=$(this).parent().find('input[data-type="menuid"]').val();
+        console.log($("#menuform"+menuid).serialize());
+        axios({      
+          method: "POST",
+          url: "menu/menuupdata",
+          data: {
+          data:$("#menuform"+menuid).serialize(),
+          },
+          contentType: "application/json",
+             dataType: "json"
+      })
+      .then(response => {
+        
+        getmenuitem();
+      })
+      .catch(error=>{
+          
+      })
+      });
       }
       $("#templatebtn").on("click",function(){
         axios({      
@@ -207,25 +250,23 @@ $(function(){
     .catch(error=>{
     })
   });    
-  function setevent(){
-    //カテゴリーの削除 
-   $(".categorydeletebtn").on("click",function(){
-     axios({      
-       method: "POST",
-       url: "menu/categorydelete",
-       data: {
-       menuid:$(this).parent().find('input[data-type="menuid"]').val(),
-       },
-       contentType: "application/json",
-          dataType: "json"
-   })
-   .then(response => {
-     
-     getmenuitem();
-   })
-   .catch(error=>{
-       
-   })
-   });
- }                               
+  //カテゴリーの削除 
+  $("#categorydeletebtn").on("click",function(){
+    axios({      
+      method: "POST",
+      url: "menu/categorydelete",
+      data: {
+      categoryid:$("#categorydelete").val()
+      },
+      contentType: "application/json",
+         dataType: "json"
+  })
+  .then(response => {
+    window.location.href="./menu";
+    
+  })
+  .catch(error=>{
+      
+  })
+  });                      
  });                                                                                                              

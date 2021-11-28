@@ -102,7 +102,7 @@ public function menuentry(Request $r)
    $param=array();
    parse_str($r["data"],$param);
    $base=TBase::getselectedbase(session()->get("userid"));
-   TMenu::create(["base_id"=>$base->id,
+   $menu=TMenu::create(["base_id"=>$base->id,
                     "category_id"=>$param["menucategory"],
                     "name"=>$param["menuname"],
                     "price"=>$param["menuprice"],
@@ -138,10 +138,76 @@ public function menuentry(Request $r)
                     "allergies_27"=>isset($param["allergies27"]) ? 1 : 0,
                     "allergies_28"=>isset($param["allergies28"]) ? 1 : 0]);
     $res["success"]=true;
+    $res["menuid"]=$menu->id;
     return response()->json($res);                           
+}
+// メニュー画像の取り込み
+public function menuimageupload(Request $r){
+    var_dump($_FILES);
+    $file=$_FILES["menuimage"]["tmp_name"];
+    $filename=session()->get("userid")."_".$_GET["id"]."_".$_FILES["menuimage"]["name"];
+    if(empty($file)||empty($filename)){
+        $res["success"]=false;
+        $res["error"]["menuimage"]="画像が指定されていません";
+        return response()->json($res,400);
+    }
+    $result=@move_uploaded_file($file,public_path("uploads")."/".$filename);
+    if(!$result){
+        $res["success"]=false;
+        $res["error"]["menuimage"]="画像のアップロードに失敗しました";
+        return response()->json($res,400);
+    }
+    TMenu::where("id",$_GET["id"])->update(["img"=>$filename]);
+    $res["success"]=$result;
+    return response()->json($res);
+}
+public function menuupdata(Request $r){
+    $param=array();
+    parse_str($r["data"],$param);
+    TMenu::where("id",$param["menuid"])->update([
+                     "name"=>$param["menuname"],
+                     "price"=>$param["menuprice"],
+                     "cal"=>$param["menucal"],
+                     "comment"=>"",
+                     "allergies_1"=>isset($param["allergies1"]) ? 1 : 0,
+                     "allergies_2"=>isset($param["allergies2"]) ? 1 : 0,
+                     "allergies_3"=>isset($param["allergies3"]) ? 1 : 0,
+                     "allergies_4"=>isset($param["allergies4"]) ? 1 : 0,
+                     "allergies_5"=>isset($param["allergies5"]) ? 1 : 0,
+                     "allergies_6"=>isset($param["allergies6"]) ? 1 : 0,
+                     "allergies_7"=>isset($param["allergies7"]) ? 1 : 0,
+                     "allergies_8"=>isset($param["allergies8"]) ? 1 : 0,
+                     "allergies_9"=>isset($param["allergies9"]) ? 1 : 0,
+                     "allergies_10"=>isset($param["allergies10"]) ? 1 : 0,
+                     "allergies_11"=>isset($param["allergies11"]) ? 1 : 0,
+                     "allergies_12"=>isset($param["allergies12"]) ? 1 : 0,
+                     "allergies_13"=>isset($param["allergies13"]) ? 1 : 0,
+                     "allergies_14"=>isset($param["allergies14"]) ? 1 : 0,
+                     "allergies_15"=>isset($param["allergies15"]) ? 1 : 0,
+                     "allergies_16"=>isset($param["allergies16"]) ? 1 : 0,
+                     "allergies_17"=>isset($param["allergies17"]) ? 1 : 0,
+                     "allergies_18"=>isset($param["allergies18"]) ? 1 : 0,
+                     "allergies_19"=>isset($param["allergies19"]) ? 1 : 0,
+                     "allergies_20"=>isset($param["allergies20"]) ? 1 : 0,
+                     "allergies_21"=>isset($param["allergies21"]) ? 1 : 0,
+                     "allergies_22"=>isset($param["allergies22"]) ? 1 : 0,
+                     "allergies_23"=>isset($param["allergies23"]) ? 1 : 0,
+                     "allergies_24"=>isset($param["allergies24"]) ? 1 : 0,
+                     "allergies_25"=>isset($param["allergies25"]) ? 1 : 0,
+                     "allergies_26"=>isset($param["allergies26"]) ? 1 : 0,
+                     "allergies_27"=>isset($param["allergies27"]) ? 1 : 0,
+                     "allergies_28"=>isset($param["allergies28"]) ? 1 : 0]);
+     $res["success"]=true;
+     return response()->json($res);  
 }
 public function menudelete(Request $r){
     TMenu::destroy($r->input("menuid"));
+    $res["success"]=true;
+    return response()->json($res);     
+}
+public function categorydelete(Request $r){
+    TMenu::where("category_id",$r->input("categoryid"))->delete();
+    TCategory::destroy($r->input("categoryid"));
     $res["success"]=true;
     return response()->json($res);     
 }

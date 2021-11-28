@@ -25,6 +25,9 @@
   <form id="imgform"> 
   <nav>
     <ul>
+    <li><input type="button" id="sitebtn" value="サイトにアップ又は更新"></li>
+    </ul>
+    <ul>
       <li>
       <p>現在のメニュー編成:{{$base->name}}</p>
       <input type="text" id="templatename" value="{{$base->name}}">

@@ -37,6 +37,9 @@ Route::post("/menu/menudelete", [MenuController::class, "menudelete"]);
 Route::post("/menu/templateupdate", [MenuController::class, "templateupdate"]);
 Route::post("/menu/templateswitch", [MenuController::class, "templateswitch"]);
 Route::post("/menu/templatescopy", [MenuController::class, "templatescopy"]);
+Route::post("/menu/menuimageupload", [MenuController::class, "menuimageupload"]);
+Route::post("/menu/categorydelete", [MenuController::class, "categorydelete"]);
+Route::post("/menu/menuupdata", [MenuController::class, "menuupdata"]);
 Route::get("/edit", [EditController::class, "index"])->name("edit.index");
 Route::get("/notice", [NoticeController::class, "index"])->name("notice.index");
 
