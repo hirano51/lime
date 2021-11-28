@@ -1,5 +1,6 @@
 const { default: axios } = require("axios");
 
+
 $(function(){
 //新規登録とエラーの表示1
     $("#btn1Text").on("click",()=>{
@@ -87,5 +88,25 @@ $(function(){
            $('body, html').animate({ scrollTop: 0 }, 500);
            return false;
         });
+      });
+      setTimeout(function(){
+        $('.start p').fadeIn(1600);
+    },500); //0.5秒後にロゴをフェードイン
+    setTimeout(function(){
+        $('.start').fadeOut(500);
+    },2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト
+　　　
+    $('.btn-gnavi').on('click',function(){
+        var rightVal = 0;
+        if($(this).hasClass('hb-open')){
+          rightVal = -300;
+          $(this).removeClass('hb-open');
+        }else{
+          $(this).addClass('hb-open');
+        }
+    
+        $('#global-navi').stop().animate({
+          right: rightVal
+        }, 200);
       });
 });

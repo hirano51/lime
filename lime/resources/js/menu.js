@@ -209,10 +209,10 @@ $(function(){
   });    
   function setevent(){
     //カテゴリーの削除 
-   $(".delete").on("click",function(){
+   $(".categorydeletebtn").on("click",function(){
      axios({      
        method: "POST",
-       url: "menu/menudelete",
+       url: "menu/categorydelete",
        data: {
        menuid:$(this).parent().find('input[data-type="menuid"]').val(),
        },

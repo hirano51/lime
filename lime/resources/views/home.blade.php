@@ -2,11 +2,13 @@
 <html lang="jp">
   <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LIME(ライム) | 食品のアレルギーサイトを無料で簡単に作成</title>
         <link rel="title icon" href="images/favicon.ico">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><!-- pwの表示非表示切替 -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
         <link rel="stylesheet" href="css/home.css">
+
         <script src="js/app.js"></script>
         <script src="js/home.js"></script>
   </head>
@@ -17,28 +19,26 @@
      @csrf
      <div class="example">
   <img src= "images/home2.jpg" id="bgtitle" alt="タイトル"/>
-  <p><img class="icon" src="images/LIME.png" ></i>〜安心した食事を〜<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>	
+  <p></i>〜安心した食事を〜<br>食物アレルギーの情報も掲載できる<br>メニュー表を作れるサイト</p>	
 </div>
 
-       
-<!-- <div id="global">
-  <button class="button">
-    <span> </span>
-    <span> </span>
-    <span> </span>
-  </button>
-  <nav class="items">
-    <a href="./login" class="item">新規登録</a>
-    <a href="./login" class="item">ログイン</a>
-    <a href="#" class="item">機能紹介</a>
-    
-  </nav>
-</div>
-<div id="overlday"> </div> -->
-     
-  
-       
-      
+<header>
+      <p class="btn-gnavi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </p>
+      <nav id="global-navi">
+        <ul class="menu">
+          <img class="icon" src="images/LIME.png" >
+          <li><a href="#" class="item"></a>    </li>
+          <li><a href="./login" class="item">新規登録</a></li>
+          <li><a href="./login" class="item">ログイン</a></li>
+          <li> <a href="#" class="item">機能紹介</a></li>
+        </ul>
+      </nav>
+    </header>    
+
       
       <!-- 新規登録１ -->
       <!-- <div id="box">
@@ -68,63 +68,48 @@
       <input type="button" id="btn1Text" value="無料でサイトを開設する" name="btn1"/>
       </div>
      </div> -->
+
+
       </form>
      <div class="explanation">
-      <div id="descriptio1">
-          <h2>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</h2>
-          <h3>こんな時はありませんか？</h3>
-          <p>
-              メニュー表にアレルギー表示をしたら見づらくなってしまった
-              <br>お客様に聞かれる度に調べたり、説明しないといけない
-              <br>海外のお客様にどう説明したら良いか分からない
-              <br>などなど・・・
-          </p>
-          <h2>よりお客様が安心しんて<br>食事できるように</h2>
-      </div>
-      
+      <div class="descriptio">
+  <img src= "images/smile.png"  alt=""/>
+  <p>よりお客様が安心しんて<br>食事できるように<br>Limeは<br>提供している食品の詳細を<br>簡単に作成できます</p>	
+ </div>
+
       <div id="function">
-          <div class="point1">
-          <h3>商品別に区分ける事ができる</h3>
-          <img src="images/x.jpg"/>
-          <p>最大２０まで区分け<br>１０００品登録が可能</p>
-          </div>
-          <div class="point2">
-          <h3>全２8種類のアレルギー表記に対応</h3>
-          <img src="images/x.jpg"/>
-          <p>使用している食材に色が付いて分かりやすい</p>
-          </div>
-          <div class="point3">
-          <h3>カロリー表記も可能</h3>
-          <img src="images/x.jpg"/>
-          <p>食事制限している人にも安心</p>
-          </div>
+        <p>機能紹介</p>
+        <ul class="horizontal-list">
+    <li class="Introduction">
+      <div><img src= "images/home2.jpg" id="Introductionimg" alt="タイトル"/></div>
+      <div>コンテンツ1</div>
+    </li>
+    <li class="Introduction">
+    <div><img src= "images/home2.jpg" id="Introductionimg" alt="タイトル"/></div>
+      <div>コンテンツ2</div>
+    </li>
+    <li class="Introduction">
+    <div><img src= "images/home2.jpg" id="Introductionimg" alt="タイトル"/></div>
+      <div>コンテンツ3</div>
+    </li>
+    <li class="Introduction">
+    <div><img src= "images/home2.jpg" id="Introductionimg" alt="タイトル"/></div>
+      <div>コンテンツ4</div>
+    </li>
+  </ul>
+    
+      </div>
+        　　　
+      <div id="procedure">
+        <p>どうやってサイトを作るの？</p>
+      <iframe width="1100" height="550" src="https://www.youtube.com/embed/bPJuQI5Wdz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><a href="./#">動画が見れない方はこちらから</a></p>
+      </div>
       </div>
       
-      <div id="make">
-        <h2>サイトを作る３ステップ！</h2>
-        <div=class="step1">
-          <h3>ステップ１</h3>
-          <h3>●●する！</h3>
-          <img src="images/x.jpg"/>
-          <p>備考欄</p>
-        </div>
-        <div=class="step2">
-          <h3>ステップ2</h3>
-          <h3>●●する！</h3>
-          <img src="images/x.jpg"/>
-          <p>備考欄</p>
-          <div=class="step3">
-          <h3>ステップ3</h3>
-          <h3>●●する！</h3>
-          <img src="images/x.jpg"/>
-          <p>備考欄</p>
-          <a href="#">他にも詳しい機能についてはこちらから</a>
-      </div>
-      </div>
-      </div>
 
      <div id="box">
-      <h2>今すぐサイトを作ろう</h2>
+      <h2>早速サイトを作ろう！！</h2>
     
      <form action="./new" method="post">
       @csrf
@@ -157,20 +142,22 @@
       </div>
 　　　 </div>
       </div>
-  </div>
       
+      <!-- 上に戻るボタン -->
       <div id="page_top"><a href="#">TOP</a></div>
 
       </form>
 
       <div id="footer">
+      <div class="twitter">
+              <a class="twitter-timeline" data-lang="ja" data-width="300" data-height="250" data-theme="light" href="https://twitter.com/home?ref_src=twsrc%5Etfw">Tweets by home</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>
+              </div>
           <h3>サービス紹介</h3>
               <li><a href="./login">新規登録</a></li>
               <li><a href="./login">ログイン</a></li>
               <li><a href="#">利用規約</a></li>
               <li><a href="#">プライバシーポリシー</a></li>
-              <li><a href="#">機能紹介</a></li>
-              <!-- <a class="twitter-timeline" href="https://twitter.com/limetes1?ref_src=twsrc%5Etfw">Tweets by limetes1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+              
       </div>
 
       <div class="start">
